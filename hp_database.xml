@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<hp_en_magasin>
+	<hp id="1">
+			<marque>Meyer</marque>
+			<modele>-</modele>
+			<numero>1</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>meyer.png</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>150</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="2">
+			<marque>JBL</marque>
+			<modele>4435</modele>
+			<numero>1</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>jbl4435.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>350</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="3">
+			<marque>JBL</marque>
+			<modele>4435</modele>
+			<numero>2</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>jbl4435.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>350</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="4">
+			<marque>Altec</marque>
+			<modele>50 - Voix de Théatre</modele>
+			<numero>1</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>altec.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>50</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="51">
+			<marque>Altec</marque>
+			<modele>50 - Voix de Théatre</modele>
+			<numero>2</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>altec.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>50</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="5">
+			<marque>Audiotools</marque>
+			<modele>-</modele>
+			<numero>1</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>audiotools.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>20</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="6">
+			<marque>Audiotools</marque>
+			<modele>-</modele>
+			<numero>2</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>audiotools.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>20</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="7">
+			<marque>Audiotools</marque>
+			<modele>-</modele>
+			<numero>3</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>audiotools.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>20</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="8">
+			<marque>Audiotools</marque>
+			<modele>-</modele>
+			<numero>4</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>audiotools.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>20</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="9">
+			<marque>Audiotools</marque>
+			<modele>-</modele>
+			<numero>5</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>audiotools.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>20</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="10">
+			<marque>Audiotools</marque>
+			<modele>-</modele>
+			<numero>6</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>audiotools.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>20</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="11">
+			<marque>Audiotools</marque>
+			<modele>-</modele>
+			<numero>7</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>audiotools.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>20</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="12">
+			<marque>Audiotools</marque>
+			<modele>-</modele>
+			<numero>8</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>audiotools.jpg</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>20</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="13">
+			<marque>FAR</marque>
+			<modele>AV8</modele>
+			<numero>1</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>farav8.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>150</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="14">
+			<marque>FAR</marque>
+			<modele>AV8</modele>
+			<numero>2</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>farav8.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>150</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="15">
+			<marque>FAR</marque>
+			<modele>AV8</modele>
+			<numero>3</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>farav8.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>150</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="16">
+			<marque>FAR</marque>
+			<modele>AV8</modele>
+			<numero>4</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>farav8.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>150</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="17">
+			<marque>FAR</marque>
+			<modele>AV8</modele>
+			<numero>5</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>farav8.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>150</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="18">
+			<marque>FAR</marque>
+			<modele>AV8</modele>
+			<numero>6</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>farav8.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>150</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="19">
+			<marque>FAR</marque>
+			<modele>AV8</modele>
+			<numero>7</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>farav8.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>150</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="20">
+			<marque>FAR</marque>
+			<modele>AV8</modele>
+			<numero>8</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>farav8.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>150</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="21">
+			<marque>Blairon</marque>
+			<modele>-</modele>
+			<numero>1</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="52">
+			<marque>Blairon</marque>
+			<modele>-</modele>
+			<numero>2</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="22">
+			<marque>Bose</marque>
+			<modele>800</modele>
+			<numero>1</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>bose800.jpg</image>
+			<directivite>10</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>250</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="53">
+			<marque>Bose</marque>
+			<modele>800</modele>
+			<numero>2</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>bose800.jpg</image>
+			<directivite>10</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>250</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="23">
+			<marque>Bose</marque>
+			<modele>802</modele>
+			<numero>1</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>bose802.png</image>
+			<directivite>10</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>250</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="54">
+			<marque>Bose</marque>
+			<modele>802</modele>
+			<numero>2</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>bose802.png</image>
+			<directivite>10</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>250</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="24">
+			<marque>Sony</marque>
+			<modele>Boule</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>hp.png</image>
+			<directivite>10</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>250</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="25">
+			<marque>Cabasse</marque>
+			<modele>Caravelle</modele>
+			<numero>1</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>cabasse.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>120</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="26">
+			<marque>Cabasse</marque>
+			<modele>Caravelle</modele>
+			<numero>2</numero>
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>cabasse.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>120</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	
+	<hp id="27">
+			<marque>Epicure</marque>
+			<modele>100</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>epicure100.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>60</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="55">
+			<marque>Epicure</marque>
+			<modele>100</modele>
+			<numero>2</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>epicure100.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>60</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="28">
+			<marque>Epicure</marque>
+			<modele>360</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>250</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="56">
+			<marque>Epicure</marque>
+			<modele>360</modele>
+			<numero>2</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>250</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="29">
+			<marque>Tannoy</marque>
+			<modele>Gold</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>gold.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="57">
+			<marque>Tannoy</marque>
+			<modele>Gold</modele>
+			<numero>2</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>gold.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="30">
+			<marque>Cabasse</marque>
+			<modele>Oberon</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>oberon.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>1000</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="58">
+			<marque>Cabasse</marque>
+			<modele>Oberon</modele>
+			<numero>2</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>oberon.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>1000</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="31">
+			<marque>Cabasse</marque>
+			<modele>Saturne</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>saturne.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>600</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="59">
+			<marque>Cabasse</marque>
+			<modele>Saturne</modele>
+			<numero>2</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>saturne.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>600</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	
+	<hp id="32">
+			<marque>Tannoy</marque>
+			<modele>8 ST</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>100</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="33">
+			<marque>3A</marque>
+			<modele>680</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>0</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="34">
+			<marque>Cabasse</marque>
+			<modele>Biquine</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="35">
+			<marque>Bose</marque>
+			<modele>601</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>bose601.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>100</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="36">
+			<marque>Epicure</marque>
+			<modele>80</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="37">
+			<marque>Epicure</marque>
+			<modele>80</modele>
+			<numero>2</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="38">
+			<marque>Cabasse</marque>
+			<modele>Goelette</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>goelette.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>120</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="39">
+			<marque>B and W</marque>
+			<modele>-</modele>
+			<numero>1</numero> <!-- Combien exactement --> 
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>bandw.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>120</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="40">
+			<marque>Cabasse</marque>
+			<modele>Caravelle</modele>
+			<numero>3</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>cabasse.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>120</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="41">
+			<marque>Cabasse</marque>
+			<modele>Caravelle</modele>
+			<numero>4</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>cabasse.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>120</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="42">
+			<marque>Cabasse</marque>
+			<modele>Caravelle</modele>
+			<numero>5</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>cabasse.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>120</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="43">
+			<marque>Cabasse</marque>
+			<modele>Caravelle</modele>
+			<numero>6</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>cabasse.jpg</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>120</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="44">
+			<marque>FAR</marque>
+			<modele>CR100</modele>
+			<numero>1</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>hp.png</image>
+			<directivite>45</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>0</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="45">
+			<marque>Tannoy</marque>
+			<modele>Nearfield 2ST</modele>
+			<numero>1</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="46">
+			<marque>FAR</marque>
+			<modele>AV6</modele>
+			<numero>1</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="47">
+			<marque>FAR</marque>
+			<modele>AV6</modele>
+			<numero>2</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="48">
+			<marque>FAR</marque>
+			<modele>AV6</modele>
+			<numero>3</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="49">
+			<marque>FAR</marque>
+			<modele>AV6</modele>
+			<numero>4</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>1</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	<hp id="50">
+			<marque>FAR</marque>
+			<modele>AV6</modele>
+			<numero>5</numero>  
+			<nombre_disponible>1</nombre_disponible>
+			<parite>0</parite>
+			<image>hp.png</image>
+			<directivite>30</directivite>
+			<frequence_rep_min>0</frequence_rep_min>
+			<frequence_rep_max>0</frequence_rep_max>
+			<impedance_nominale>0</impedance_nominale>
+			<puissance_rms>80</puissance_rms>
+			<puissance_crete>0</puissance_crete>
+	</hp>
+	
+	
+		
+</hp_en_magasin>

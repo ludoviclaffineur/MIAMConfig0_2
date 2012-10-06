@@ -1,0 +1,288 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Musiques et Recherches}
+\title{Configuration salle : Studio 1 \\ Adresse :  Place Flagey}
+ \begin{document}
+\maketitle
+\chapter*{Vue d'ensemble}
+ \begin{center}
+\includegraphics[height=20cm]{data/planSalle123.pdf}
+\end{center}
+ \chapter*{Association pistes audios - Curseur - Sortie}
+ \begin{center}
+ \begin{tabular}{|c|c|c|}
+ \hline 
+ Piste Audio & Curseur & Sortie MADI \\ 
+\hline 
+1 & 1 & 1 \\ 
+ \hline 
+2 & 2 & 9 \\ 
+ \hline 
+13 & 2 & 53 \\ 
+ \hline 
+13 & 2 & 57 \\ 
+ \hline 
+6 & 1 & 22 \\ 
+ \hline 
+8 & 2 & 30 \\ 
+ \hline 
+14 & 12 & 47 \\ 
+ \hline 
+14 & 11 & 45 \\ 
+ \hline 
+7 & 5 & 32 \\ 
+ \hline 
+15 & 10 & 39 \\ 
+ \hline 
+11 & 1 & 50 \\ 
+ \hline 
+30 & 2 & 43 \\ 
+ \hline 
+3 & 3 & 3 \\ 
+ \hline 
+3 & 3 & 7 \\ 
+ \hline 
+9 & 5 & 25 \\ 
+ \hline 
+5 & 3 & 18 \\ 
+ \hline 
+5 & 13 & 12 \\ 
+ \hline 
+1 & 1 & 20 \\ 
+ \hline 
+2 & 2 & 10 \\ 
+ \hline 
+11 & 1 & 51 \\ 
+ \hline 
+30 & 2 & 42 \\ 
+ \hline 
+7 & 1 & 31 \\ 
+ \hline 
+8 & 2 & 41 \\ 
+ \hline 
+4 & 4 & 15 \\ 
+ \hline 
+4 & 4 & 16 \\ 
+ \hline 
+5 & 3 & 19 \\ 
+ \hline 
+5 & 3 & 11 \\ 
+ \hline 
+7 & 5 & 24 \\ 
+ \hline 
+9 & 10 & 26 \\ 
+ \hline 
+13 & 13 & 55 \\ 
+ \hline 
+13 & 13 & 56 \\ 
+ \hline 
+14 & 11 & 46 \\ 
+ \hline 
+1 & 1 & 2 \\ 
+ \hline 
+2 & 2 & 8 \\ 
+ \hline 
+10 & 6 & 34 \\ 
+ \hline 
+9 & 7 & 37 \\ 
+ \hline 
+3 & 3 & 4 \\ 
+ \hline 
+
+ \end{tabular} \\ 
+ \begin{tabular}{|c|c|c|}
+ \hline 
+ Piste Audio & Curseur & Sortie MADI \\ 
+\hline 
+ 3 & 3 & 6 \\ 
+ \hline 
+6 & 0 & 23 \\ 
+ \hline 
+8 & 0 & 28 \\ 
+ \hline 
+5 & 5 & 14 \\ 
+ \hline 
+10 & 8 & 36 \\ 
+ \hline 
+11 & 2 & 52 \\ 
+ \hline 
+30 & 2 & 58 \\ 
+ \hline 
+6 & 1 & 21 \\ 
+ \hline 
+8 & 2 & 29 \\ 
+ \hline 
+12 & 12 & 54 \\ 
+ \hline 
+7 & 0 & 27 \\ 
+ \hline 
+12 & 12 & 49 \\ 
+ \hline 
+15 & 11 & 40 \\ 
+ \hline 
+12 & 12 & 48 \\ 
+ \hline 
+15 & 11 & 44 \\ 
+ \hline 
+13 & 13 & 0 \\ 
+ \hline 
+4 & 3 & 5 \\ 
+ \hline 
+10 & 6 & 33 \\ 
+ \hline 
+9 & 9 & 38 \\ 
+ \hline 
+5 & 4 & 17 \\ 
+ \hline 
+5 & 4 & 13 \\ 
+ \hline 
+10 & 8 & 35 \\ 
+ \hline 
+
+ \end{tabular}  
+
+ \end{center}
+ \chapter*{Association MADI - Ampli - haut-parleurs}
+ \begin{center}
+ \begin{tabular}{|c|c|c|}
+ \hline 
+ sortie MADI & Ampli & Haut-parleur \\ 
+\hline 
+1 & TODO & JBL 4435 1 \\ 
+ \hline 
+9 & TODO & JBL 4435 2 \\ 
+ \hline 
+53 & TODO & Altec 50 - Voix de Théatre 1 \\ 
+ \hline 
+57 & TODO & Altec 50 - Voix de Théatre 2 \\ 
+ \hline 
+22 & TODO & Audiotools - 1 \\ 
+ \hline 
+30 & TODO & Audiotools - 2 \\ 
+ \hline 
+47 & TODO & Audiotools - 3 \\ 
+ \hline 
+45 & TODO & Audiotools - 4 \\ 
+ \hline 
+32 & TODO & Audiotools - 5 \\ 
+ \hline 
+39 & TODO & Audiotools - 6 \\ 
+ \hline 
+50 & TODO & Audiotools - 7 \\ 
+ \hline 
+43 & TODO & Audiotools - 8 \\ 
+ \hline 
+3 & TODO & FAR AV8 1 \\ 
+ \hline 
+7 & TODO & FAR AV8 2 \\ 
+ \hline 
+25 & TODO & Meyer - 1 \\ 
+ \hline 
+18 & TODO & FAR AV8 3 \\ 
+ \hline 
+12 & TODO & FAR AV8 4 \\ 
+ \hline 
+20 & TODO & FAR AV8 5 \\ 
+ \hline 
+10 & TODO & FAR AV8 6 \\ 
+ \hline 
+51 & TODO & FAR AV8 7 \\ 
+ \hline 
+42 & TODO & FAR AV8 8 \\ 
+ \hline 
+31 & TODO & Blairon - 1 \\ 
+ \hline 
+41 & TODO & Blairon - 2 \\ 
+ \hline 
+15 & TODO & Bose 800 1 \\ 
+ \hline 
+16 & TODO & Bose 800 2 \\ 
+ \hline 
+19 & TODO & Bose 802 1 \\ 
+ \hline 
+11 & TODO & Bose 802 2 \\ 
+ \hline 
+24 & TODO & Epicure 100 1 \\ 
+ \hline 
+26 & TODO & Epicure 100 2 \\ 
+ \hline 
+55 & TODO & Epicure 360 1 \\ 
+ \hline 
+56 & TODO & Epicure 360 2 \\ 
+ \hline 
+46 & TODO & Sony Boule 1 \\ 
+ \hline 
+2 & TODO & Tannoy Gold 1 \\ 
+ \hline 
+8 & TODO & Tannoy Gold 2 \\ 
+ \hline 
+34 & TODO & Cabasse Oberon 1 \\ 
+ \hline 
+37 & TODO & Cabasse Oberon 2 \\ 
+ \hline 
+4 & TODO & Cabasse Caravelle 1 \\ 
+ \hline 
+
+ \end{tabular} \\ 
+ \begin{tabular}{|c|c|c|}
+ \hline 
+ sortie MADI & Ampli & Haut-parleur \\ 
+\hline 
+ 6 & TODO & Cabasse Caravelle 2 \\ 
+ \hline 
+23 & TODO & Cabasse Saturne 1 \\ 
+ \hline 
+28 & TODO & Cabasse Saturne 2 \\ 
+ \hline 
+14 & TODO & Tannoy 8 ST 1 \\ 
+ \hline 
+36 & TODO & 3A 680 1 \\ 
+ \hline 
+52 & TODO & Cabasse Biquine 1 \\ 
+ \hline 
+58 & TODO & Bose 601 1 \\ 
+ \hline 
+21 & TODO & Epicure 80 1 \\ 
+ \hline 
+29 & TODO & Epicure 80 2 \\ 
+ \hline 
+54 & TODO & Cabasse Goelette 1 \\ 
+ \hline 
+27 & TODO & B and W - 1 \\ 
+ \hline 
+49 & TODO & Cabasse Caravelle 3 \\ 
+ \hline 
+40 & TODO & Cabasse Caravelle 4 \\ 
+ \hline 
+48 & TODO & Cabasse Caravelle 5 \\ 
+ \hline 
+44 & TODO & Cabasse Caravelle 6 \\ 
+ \hline 
+0 & TODO & FAR CR100 1 \\ 
+ \hline 
+5 & TODO & Tannoy Nearfield 2ST 1 \\ 
+ \hline 
+33 & TODO & FAR AV6 1 \\ 
+ \hline 
+38 & TODO & FAR AV6 2 \\ 
+ \hline 
+17 & TODO & FAR AV6 3 \\ 
+ \hline 
+13 & TODO & FAR AV6 4 \\ 
+ \hline 
+35 & TODO & FAR AV6 5 \\ 
+ \hline 
+
+ \end{tabular}  
+
+ \end{center}
+ \end{document}  
+
