@@ -7,133 +7,29 @@
 		<adresse> 150, rue royale, 1000 Bruxelles </adresse> 
 	</salle>
 	<hp>
-		<x>77</x>
-		<y>740</y>
+		<x>0.0890625</x>
+		<y>0.30375</y>
 		<z>0</z>
-		<rotation>315</rotation>
+		<rotation>0</rotation>
 		<idHp>4</idHp>
 		<placement>1</placement>
 		<xRotation>0</xRotation>
 		<hasSymetric>true</hasSymetric>
-		<curseur>1</curseur>
-		<pisteAudio>2</pisteAudio>
-		<sortieMadi>9</sortieMadi>
+		<curseur>0</curseur>
+		<pisteAudio>null</pisteAudio>
+		<sortieMadi>0</sortieMadi>
 	</hp>
 	<hp>
-		<x>883</x>
-		<y>740</y>
+		<x>0.4109375</x>
+		<y>0.30375</y>
 		<z>0</z>
-		<rotation>-135</rotation>
+		<rotation>180</rotation>
 		<idHp>51</idHp>
 		<placement>2</placement>
 		<xRotation>0</xRotation>
 		<hasSymetric>true</hasSymetric>
-		<curseur>2</curseur>
-		<pisteAudio>1</pisteAudio>
-		<sortieMadi>10</sortieMadi>
-	</hp>
-	<hp>
-		<x>146</x>
-		<y>127</y>
-		<z>0</z>
-		<rotation>60</rotation>
-		<idHp>2</idHp>
-		<placement>3</placement>
-		<xRotation>0</xRotation>
-		<hasSymetric>true</hasSymetric>
-		<curseur>1</curseur>
-		<pisteAudio>3</pisteAudio>
-		<sortieMadi>1</sortieMadi>
-	</hp>
-	<hp>
-		<x>814</x>
-		<y>127</y>
-		<z>0</z>
-		<rotation>120</rotation>
-		<idHp>3</idHp>
-		<placement>4</placement>
-		<xRotation>0</xRotation>
-		<hasSymetric>true</hasSymetric>
-		<curseur>2</curseur>
-		<pisteAudio>4</pisteAudio>
-		<sortieMadi>4</sortieMadi>
-	</hp>
-	<hp>
-		<x>113</x>
-		<y>309</y>
-		<z>0</z>
-		<rotation>60</rotation>
-		<idHp>5</idHp>
-		<placement>5</placement>
-		<xRotation>0</xRotation>
-		<hasSymetric>true</hasSymetric>
-		<curseur>3</curseur>
-		<pisteAudio>5</pisteAudio>
-		<sortieMadi>5</sortieMadi>
-	</hp>
-	<hp>
-		<x>847</x>
-		<y>309</y>
-		<z>0</z>
-		<rotation>120</rotation>
-		<idHp>6</idHp>
-		<placement>6</placement>
-		<xRotation>0</xRotation>
-		<hasSymetric>true</hasSymetric>
-		<curseur>4</curseur>
-		<pisteAudio>5</pisteAudio>
-		<sortieMadi>6</sortieMadi>
-	</hp>
-	<hp>
-		<x>130</x>
-		<y>520</y>
-		<z>0</z>
-		<rotation>0</rotation>
-		<idHp>7</idHp>
-		<placement>7</placement>
-		<xRotation>0</xRotation>
-		<hasSymetric>true</hasSymetric>
-		<curseur>4</curseur>
-		<pisteAudio>4</pisteAudio>
-		<sortieMadi>7</sortieMadi>
-	</hp>
-	<hp>
-		<x>830</x>
-		<y>520</y>
-		<z>0</z>
-		<rotation>180</rotation>
-		<idHp>8</idHp>
-		<placement>8</placement>
-		<xRotation>0</xRotation>
-		<hasSymetric>true</hasSymetric>
-		<curseur>3</curseur>
-		<pisteAudio>3</pisteAudio>
-		<sortieMadi>8</sortieMadi>
-	</hp>
-	<hp>
-		<x>331</x>
-		<y>105</y>
-		<z>0</z>
-		<rotation>105</rotation>
-		<idHp>9</idHp>
-		<placement>9</placement>
-		<xRotation>0</xRotation>
-		<hasSymetric>true</hasSymetric>
-		<curseur>2</curseur>
-		<pisteAudio>1</pisteAudio>
-		<sortieMadi>2</sortieMadi>
-	</hp>
-	<hp>
-		<x>629</x>
-		<y>105</y>
-		<z>0</z>
-		<rotation>75</rotation>
-		<idHp>10</idHp>
-		<placement>10</placement>
-		<xRotation>0</xRotation>
-		<hasSymetric>true</hasSymetric>
-		<curseur>1</curseur>
-		<pisteAudio>2</pisteAudio>
-		<sortieMadi>3</sortieMadi>
+		<curseur>0</curseur>
+		<pisteAudio>null</pisteAudio>
+		<sortieMadi>0</sortieMadi>
 	</hp>
 </config>

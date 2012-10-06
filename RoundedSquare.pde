@@ -34,7 +34,7 @@ class RoundedSquare {
     this.linkPicture=linkPicture;
     centerX=x+(width/2);
     centerY=y+(length/2);
-    font = createFont("SansSerif", 6);
+    font = createFont("SansSerif",(int)(6*widthCoeff));
     //fontA = loadFont("Ziggurat-HTF-Black-32.vlw");
 
 

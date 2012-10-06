@@ -36,7 +36,7 @@ class RoundedSquareDHp {
     this.linkPicture=linkPicture;
     centerX=x+(width/2);
     centerY=y+(length/2);
-    font = createFont("SansSerif", 6);
+    font = createFont("SansSerif", (int)(6*widthCoeff));
     //fontA = loadFont("Ziggurat-HTF-Black-32.vlw");
 
 
@@ -105,13 +105,13 @@ class RoundedSquareDHp {
     }
 
 
-    text(name1, x, y-2, 100, 30);
+    text(name1, x, y-2, (int)(100*widthCoeff), (int)(30*heightCoeff));
     if (isDisable2) {
       fill(#3e4b57);
     }
     else fill(#E1E6FA, 255);
 
-    text(name2, x, y+width/2-2, 100, 30);
+    text(name2, x, y+width/2-2, (int)(100*widthCoeff), (int)(30*heightCoeff));
     pushMatrix();
 
     /*  image(img, x+diameter/2, y+diameter/2);

@@ -52,6 +52,8 @@ RoundedSquareDHp HPtest;
 RoundedSquare hpInData ;
 OscP5 oscP5;
 PGraphicsPDF pdf;
+float widthCoeff = (float) (displayWidth) /1920.0;
+float heightCoeff = (float) (displayHeight) /1080.0;
 
 
 NetAddress distantLocation = new NetAddress("172.30.7.66", 1111);
@@ -59,6 +61,9 @@ void setup() {
 
   oscP5 = new OscP5(this, 1112);
   size(displayWidth, displayHeight);
+  
+  widthCoeff = (float) (displayWidth) /1920.0;
+  heightCoeff = (float) (displayHeight) /1080.0;
   //size(1366, 768);
   //size(1280, 800);
 
@@ -298,18 +303,18 @@ void prepareMenu() {
   buttonGeneral[1] = new RoundedSquare (40, 100, 20, width-230, height-150, #375D81, "Sauvegarder", 0, null);
   buttonGeneral[2] = new RoundedSquare (40, 100, 20, width-340, height-150 +0, #375D81, "Quitter", 0, null);
 
-  buttonTab2[0]=new RoundedSquare (40, 100, 20, width/2+20, height/2-250 +0, #375D81, "Supp assign", 0, null);
-  buttonTab2[1]=new RoundedSquare (40, 100, 20, width/2+20, height-300 +0, #375D81, "Supp assign", 0, null);
-  buttonTab3=new RoundedSquare (40, 100, 20, width/2+20, height-300 +0, #375D81, "Supp assign", 0, null);
+  buttonTab2[0]=new RoundedSquare (40, 100, 20, width/2+20, height/2-(int)(250*heightCoeff), #375D81, "Supp assign", 0, null);
+  buttonTab2[1]=new RoundedSquare (40, 100, 20, width/2+20, height-(int)(300*heightCoeff) +0, #375D81, "Supp assign", 0, null);
+  buttonTab3=new RoundedSquare (40, 100, 20, width/2+20, height-(int)(300*heightCoeff) +0, #375D81, "Supp assign", 0, null);
   int j=0;
   int k=0; 
   for (int i =0;i<fiveDotOne.length;i++) {
-    if (width/2 +k*60>width-80)
+    if (width/2 +k*(int)(widthCoeff*60)>width-(int)(widthCoeff*80))
     {
       j++;
       k=0;
     }
-    fiveDotOne[i] = new RoundedSquare (50, 50, 10, width/2+20+k*60, 80+j*60, #375D81, ""+(i+1), 1, null);
+    fiveDotOne[i] = new RoundedSquare ((int)(50*widthCoeff), (int)(50*widthCoeff), 10, width/2+20+k*(int)(widthCoeff*60), 80+j*(int)(widthCoeff*60), #375D81, ""+(i+1), 1, null);
     k++;
   }
   j=0;
@@ -317,12 +322,12 @@ void prepareMenu() {
   for (int i =0;i<outputs.length;i++) {
 
     //   println(Integer.parseInt(numero[i].getContent()));
-    if (width/2 +k*60>width-80)
+    if (width/2 +k*(int)(widthCoeff*60)>width-(int)(widthCoeff*80))
     {
       j++;
       k=0;
     }
-    outputs[i] = new RoundedSquare (50, 50, 10, width/2+20 +k*60, height/2-80+j*60, #375D81, ""+(i+1), 1, null);
+    outputs[i] = new RoundedSquare ((int)(widthCoeff*50), (int)(widthCoeff*50), 10, width/2+20 +k*(int)(widthCoeff*60), height/2-80+j*(int)(widthCoeff*60), #375D81, ""+(i+1), 1, null);
     k++;
   }
   k=0;
@@ -335,7 +340,7 @@ void prepareMenu() {
       j++;
       k=0;
     }
-    Faders[i] = new RoundedSquare (50, 50, 10, 3*width/5 +k*60, height/4-80+j*60, #375D81, ""+(i+1), 1, null);
+    Faders[i] = new RoundedSquare ((int)(widthCoeff*50), (int)(widthCoeff*50), 10, 3*width/5 +k*(int)(widthCoeff*60), height/4-80+j*(int)(widthCoeff*60), #375D81, ""+(i+1), 1, null);
     k++;
   }
 }
@@ -368,8 +373,8 @@ void loadXML() {
     hp hpTemp = new hp(findHpWithId(Integer.parseInt(idElements[i].getContent())));
     //println("id " + Integer.parseInt(idElements[i].getContent()));
     hpTemp.placement=Integer.parseInt(placementElements[i].getContent());
-    hpTemp.position[0]=Integer.parseInt(x[i].getContent());
-    hpTemp.position[1]=Integer.parseInt(y[i].getContent());
+    hpTemp.position[0]=(int)(Float.parseFloat(x[i].getContent())*displayWidth);
+    hpTemp.position[1]=(int)(Float.parseFloat(y[i].getContent())*displayHeight);
     hpTemp.position[2]=Integer.parseInt(z[i].getContent());
     hpTemp.rotation= (Float.parseFloat(rotationElements[i].getContent()))* 3.1415/180;
     hpTemp.xRotation= (Integer.parseInt(xRotation[i].getContent()));
@@ -443,14 +448,14 @@ void loadHpInStock() {
   for (int i=0 ;i<marque.length;i++)
   {
     //   println(Integer.parseInt(numero[i].getContent()));
-    if (width/2 +k*110>width-110)
+    if (width/2 +k*(int)(110*widthCoeff)>width-(int)(110*widthCoeff))
     {
       j++;
       k=0;
     }
     doubleHp=(Integer.parseInt(parite[i].getContent())==1);
     if (!doubleHp) {
-      hpInStock.add(new RoundedSquare (50, 100, 10, width/2 +20+k*110, 60+j*60, #375D81, marque[i].getContent()+" "+modele[i].getContent()+" "+numero[i].getContent(), Integer.parseInt(nombre[i].getContent()), 
+      hpInStock.add(new RoundedSquare ((int)(50.0*heightCoeff), (int)(100.0*widthCoeff), 10, width/2 +20+k*(int)(110*widthCoeff), 60+j*(int)(60*heightCoeff), #375D81, marque[i].getContent()+" "+modele[i].getContent()+" "+numero[i].getContent(), Integer.parseInt(nombre[i].getContent()), 
       new hp(200, 200, 0, marque[i].getContent() +" "+ modele[i].getContent(), 0, "images/"+images[i].getContent(), Integer.parseInt(frequence_rep_min[i].getContent()), 
       Integer.parseInt(frequence_rep_max[i].getContent()), Float.parseFloat(impedance_nominale[i].getContent()), Integer.parseInt( puissance_rms[i].getContent()), 
       Integer.parseInt( puissance_crete[i].getContent()), Integer.parseInt(id[i].getString("id")), Integer.parseInt(parite[i].getContent()), Float.parseFloat(directivite[i].getContent())*3.1415/360, Integer.parseInt(numero[i].getContent())) ) );
@@ -458,7 +463,7 @@ void loadHpInStock() {
     }
     else {
       if (Integer.parseInt(numero[i].getContent())%2!=0) {
-        hpInStock.add(new RoundedSquareDHp (50, 100, 10, width/2+20 +k*110, 60+j*60, #375D81, marque[i].getContent() +" "+ modele[i].getContent()+" "+numero[i].getContent(), marque[i].getContent() +" "+ modele[i].getContent()+" "+numero[i+1].getContent(), new hp(200, 200, 0, marque[i].getContent() +" "+ modele[i].getContent(), 0, "images/"+images[i].getContent(), Integer.parseInt(frequence_rep_min[i].getContent()), 
+        hpInStock.add(new RoundedSquareDHp ((int)(50.0*heightCoeff), (int)(100.0*widthCoeff), 10, width/2+20 +k*(int)(110*widthCoeff), 60+j*(int)(60*heightCoeff), #375D81, marque[i].getContent() +" "+ modele[i].getContent()+" "+numero[i].getContent(), marque[i].getContent() +" "+ modele[i].getContent()+" "+numero[i+1].getContent(), new hp(200, 200, 0, marque[i].getContent() +" "+ modele[i].getContent(), 0, "images/"+images[i].getContent(), Integer.parseInt(frequence_rep_min[i].getContent()), 
         Integer.parseInt(frequence_rep_max[i].getContent()), Float.parseFloat(impedance_nominale[i].getContent()), Integer.parseInt( puissance_rms[i].getContent()), 
         Integer.parseInt( puissance_crete[i].getContent()), Integer.parseInt(id[i].getString("id")), Integer.parseInt(parite[i].getContent()), Float.parseFloat(directivite[i].getContent())*3.1415/360, Integer.parseInt(numero[i].getContent())), 
         new hp(200, 200, 0, 
@@ -522,8 +527,8 @@ void exportToXML() {
   for (int i=0;i<hpOnStage.size();i++) {
     hp hpTemp = (hp) hpOnStage.elementAt(i);
     data+="\t<hp>\n";
-    data+="\t\t<x>"+hpTemp.position[0]+"</x>\n";
-    data+="\t\t<y>"+hpTemp.position[1]+"</y>\n";
+    data+="\t\t<x>"+(float)(hpTemp.position[0])/displayWidth+"</x>\n";
+    data+="\t\t<y>"+(float)(hpTemp.position[1])/displayHeight+"</y>\n";
     data+="\t\t<z>"+hpTemp.position[2]+"</z>\n";
     // println("idHpExport "+hpTemp.idHp);
     data+="\t\t<rotation>"+round(hpTemp.rotation*180/3.1415)+"</rotation>\n";
