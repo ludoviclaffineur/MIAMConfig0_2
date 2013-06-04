@@ -34,7 +34,7 @@ class RoundedSquare {
     this.linkPicture=linkPicture;
     centerX=x+(width/2);
     centerY=y+(length/2);
-    font = createFont("SansSerif",(int)(6*widthCoeff));
+    font = createFont("SansSerif", (int)(6*widthCoeff));
     //fontA = loadFont("Ziggurat-HTF-Black-32.vlw");
 
 
@@ -99,13 +99,12 @@ class RoundedSquare {
     }
 
     textAlign(CENTER, CENTER);
-    text(name, x, y+width/2-15, length, width/2+10);
-    pushMatrix();
-
-    /*  image(img, x+diameter/2, y+diameter/2);
-     tint(255,alphaFill);*/
-
-    popMatrix();
+    if (hpLink == null){
+      text(name, x, y+width/2-15, length, width/2+10); 
+    }
+    else{
+      text(hpLink.nickname + hpLink.numero, x, y+width/2-15, length, width/2+10); 
+    }
   }
 }
 

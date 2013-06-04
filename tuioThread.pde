@@ -23,12 +23,12 @@ class tuioThread extends Thread {
       try {
 
         //println("TUIO Bridge Launched");
-                 Process p = Runtime.getRuntime().exec("C:\\Touch2Tuio\\Touch2Tuio.exe MIAMConfig");
-     // Process p =  Runtime.getRuntime().exec("C:\\Users\\Administrator\\Downloads\\Touch2Tuio_0.2\\Touch2Tuio\\Release\\Touch2Tuio.exe MIAMConfig");
+        Process p = Runtime.getRuntime().exec("C:\\Touch2Tuio\\Touch2Tuio.exe MIAMConfig");
+        // Process p =  Runtime.getRuntime().exec("C:\\Users\\Administrator\\Downloads\\Touch2Tuio_0.2\\Touch2Tuio\\Release\\Touch2Tuio.exe MIAMConfig");
         p.waitFor();
       }
       catch(Exception e) {
-       // print(e);
+        // print(e);
       } 
 
 

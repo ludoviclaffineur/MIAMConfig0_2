@@ -8,7 +8,7 @@ import javax.media.opengl.*;
 import processing.opengl.*;
 fader f;
 boolean rotationActivated=false, moveAllRight=false, ExportPDF=false;
-String linkPlanSalle="planIsib.png";
+String linkPlanSalle="planIsib.png"; 
 String linkPlanSalle1="PlanSalleConfigBlanc.png";
 int pisteSelected=0;
 int curseurSelected=0;
@@ -31,10 +31,10 @@ int lastIdHpOnStage=1, offsetX, offsetY, positionInitX, positionInitY;
 hp hpTest;
 TuioCursor blobsOnHp [] = new TuioCursor [10];
 TuioCursor moveTableMixCursor;
-Vector hpOnStage = new Vector();
+ArrayList <hp> hpOnStage = new ArrayList();
 hp hpSelected []  =new hp [10]; 
 fader tableMix[] = new fader[48];
-Vector hpInStock = new Vector();
+ArrayList hpInStock = new ArrayList();
 pdfLatex latex;
 
 boolean isOnSlider=false;
@@ -52,18 +52,18 @@ RoundedSquareDHp HPtest;
 RoundedSquare hpInData ;
 OscP5 oscP5;
 PGraphicsPDF pdf;
-float widthCoeff = (float) (displayWidth) /1920.0;
-float heightCoeff = (float) (displayHeight) /1080.0;
+float widthCoeff = (float) (displayWidth-100) /1920.0;
+float heightCoeff = (float) (displayHeight-100) /1080.0;
 
 
 NetAddress distantLocation = new NetAddress("172.30.7.66", 1111);
 void setup() { 
 
-  oscP5 = new OscP5(this, 1112);
-  size(displayWidth, displayHeight);
-  
-  widthCoeff = (float) (displayWidth) /1920.0;
-  heightCoeff = (float) (displayHeight) /1080.0;
+ // oscP5 = new OscP5(this, 1112);
+  size(displayWidth-100, displayHeight-100);
+
+  widthCoeff = (float) (displayWidth-100) /1920.0;
+  heightCoeff = (float) (displayHeight-100) /1080.0;
   //size(1366, 768);
   //size(1280, 800);
 
@@ -76,22 +76,25 @@ void setup() {
   tuioThread tt = new tuioThread();
   listeHpSel=new ArrayList();
   listeHpSelCur=new ArrayList();
-  tt.start();
+ // tt.start();
   //size(1920, 1080,OPENGL);
   tuioClient  = new TuioProcessing(this); 
-  fs = new FullScreen(this);
-  fs.enter();
+  //fs = new FullScreen(this);
+  //fs.enter();
   pdf = (PGraphicsPDF) createGraphics(width/2, height, PDF, "data/planSalle123.pdf");
-  //println( hpInStock.elementAt(1).getClass().getName());
+  //println( hpInStock.get(1).getClass().getName());
   // createTableMix();
+  frameRate(20);
 }
 
 
 void draw() {
-if (ExportPDF) {
+  //long start = System.nanoTime();    
+
+  if (ExportPDF) {
     beginRecord(pdf);
   }
-  smooth();
+  //smooth();
 
   background(#183152);
   buttonGeneral[0].draw();
@@ -99,28 +102,29 @@ if (ExportPDF) {
   buttonGeneral[2].draw();
   // background(#001336);
   // background (#0b162f);
-  
+
 
 
 
   image(planSalle, 0, 0, width/2, height);
   textFont(font, 16);
   for (int i = 0 ;i<hpOnStage.size();i++) {
-    hp rTemp= (hp) (hpOnStage.elementAt(i));
+    hp rTemp= (hp) (hpOnStage.get(i));
     rTemp.draw();
   }
-
+  // print((System.nanoTime() - start)/1000000);
   drawOnglets();
+  // print("  " + (System.nanoTime() - start)/1000000);
   if (onglet==1) {
     for (int i =0 ; i<hpInStock.size();i++)
     {
-      if (hpInStock.elementAt(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
-        RoundedSquare rTemp= (RoundedSquare) (hpInStock.elementAt(i));
+      if (hpInStock.get(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
+        RoundedSquare rTemp= (RoundedSquare) (hpInStock.get(i));
         //rTemp.isDisable=true;
         rTemp.draw();
       }
       else {
-        RoundedSquareDHp rTemp= (RoundedSquareDHp) (hpInStock.elementAt(i));
+        RoundedSquareDHp rTemp= (RoundedSquareDHp) (hpInStock.get(i));
         //rTemp.isDisable=true;
         rTemp.draw();
       }
@@ -149,7 +153,7 @@ if (ExportPDF) {
     drawFaders();
     buttonTab3.draw();
   }
-
+  //  println("  " + (System.nanoTime() - start)/1000000);
   if (ExportPDF) {
     endRecord();
     ExportPDF=false;
@@ -351,11 +355,11 @@ void loadXML() {
 
   hpSelected[0]=null;
   XML config = null;
- try{
-  config = new XML(this, "config_ISIB.xml");
- }
- catch(Exception e){
- }
+  try {
+    config = loadXML("config_ISIB.xml");
+  }
+  catch(Exception e) {
+  }
   XML[] x = config.getChildren("hp/x");
   XML[] y = config.getChildren("hp/y");
   XML[] z = config.getChildren("hp/z");
@@ -374,7 +378,7 @@ void loadXML() {
     //println("id " + Integer.parseInt(idElements[i].getContent()));
     hpTemp.placement=Integer.parseInt(placementElements[i].getContent());
     hpTemp.position[0]=(int)(Float.parseFloat(x[i].getContent())*displayWidth);
-    hpTemp.position[1]=(int)(Float.parseFloat(y[i].getContent())*displayHeight);
+    hpTemp.position[1]=(int)(Float  .parseFloat(y[i].getContent())*displayHeight);
     hpTemp.position[2]=Integer.parseInt(z[i].getContent());
     hpTemp.rotation= (Float.parseFloat(rotationElements[i].getContent()))* 3.1415/180;
     hpTemp.xRotation= (Integer.parseInt(xRotation[i].getContent()));
@@ -392,12 +396,12 @@ void loadXML() {
     }
     String hasSym= hasSymetric[i].getContent();
     int k= getPositionOfHpInStock(hpTemp.idHp);
-    if (hpInStock.elementAt(k).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
-      RoundedSquare rTemp = (RoundedSquare) hpInStock.elementAt(k);
+    if (hpInStock.get(k).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
+      RoundedSquare rTemp = (RoundedSquare) hpInStock.get(k);
       rTemp.isDisable=true;
     }
     else {
-      RoundedSquareDHp rTemp =(RoundedSquareDHp) hpInStock.elementAt(k);
+      RoundedSquareDHp rTemp =(RoundedSquareDHp) hpInStock.get(k);
       if (hpTemp.numero%2!=0)
       {
         rTemp.isDisable1=true;
@@ -414,6 +418,7 @@ void loadXML() {
       hpTemp.hasSymetric=false;
     }
     //    println(rTemp.hpLink.type+"   "+  rTemp.numberDispo);
+    hpTemp.calculateDraw();
     hpOnStage.add(hpTemp);
   }
   lastIdHpOnStage=lastIdHpOnStage+1+lastIdHpOnStage%2;
@@ -423,14 +428,14 @@ void loadHpInStock() {
   hpInStock.clear();
   boolean doubleHp=false;
   XML config = null;
-  try{
-    config = new XML(this, "hp_database.xml");
+  try {
+    config = loadXML ("hp_database.xml");
   }
-  catch (Exception e){
-    
+  catch (Exception e) {
   }
   XML[] id = config.getChildren("hp");
   XML[] marque = config.getChildren("hp/marque");
+  XML[] nickname = config.getChildren("hp/nickname");
   XML[] modele = config.getChildren("hp/modele");
   XML[] numero = config.getChildren("hp/numero");
   XML[] images = config.getChildren("hp/image");
@@ -456,21 +461,22 @@ void loadHpInStock() {
     doubleHp=(Integer.parseInt(parite[i].getContent())==1);
     if (!doubleHp) {
       hpInStock.add(new RoundedSquare ((int)(50.0*heightCoeff), (int)(100.0*widthCoeff), 10, width/2 +20+k*(int)(110*widthCoeff), 60+j*(int)(60*heightCoeff), #375D81, marque[i].getContent()+" "+modele[i].getContent()+" "+numero[i].getContent(), Integer.parseInt(nombre[i].getContent()), 
-      new hp(200, 200, 0, marque[i].getContent() +" "+ modele[i].getContent(), 0, "images/"+images[i].getContent(), Integer.parseInt(frequence_rep_min[i].getContent()), 
+      new hp(20, 20, 0, marque[i].getContent() +" "+ modele[i].getContent(), 0, "images/"+images[i].getContent(), Integer.parseInt(frequence_rep_min[i].getContent()), 
       Integer.parseInt(frequence_rep_max[i].getContent()), Float.parseFloat(impedance_nominale[i].getContent()), Integer.parseInt( puissance_rms[i].getContent()), 
-      Integer.parseInt( puissance_crete[i].getContent()), Integer.parseInt(id[i].getString("id")), Integer.parseInt(parite[i].getContent()), Float.parseFloat(directivite[i].getContent())*3.1415/360, Integer.parseInt(numero[i].getContent())) ) );
+      Integer.parseInt( puissance_crete[i].getContent()), Integer.parseInt(id[i].getString("id")), Integer.parseInt(parite[i].getContent()), Float.parseFloat(directivite[i].getContent())*3.1415/360, Integer.parseInt(numero[i].getContent()),nickname[i].getContent()) ) );
       k++;
     }
     else {
       if (Integer.parseInt(numero[i].getContent())%2!=0) {
-        hpInStock.add(new RoundedSquareDHp ((int)(50.0*heightCoeff), (int)(100.0*widthCoeff), 10, width/2+20 +k*(int)(110*widthCoeff), 60+j*(int)(60*heightCoeff), #375D81, marque[i].getContent() +" "+ modele[i].getContent()+" "+numero[i].getContent(), marque[i].getContent() +" "+ modele[i].getContent()+" "+numero[i+1].getContent(), new hp(200, 200, 0, marque[i].getContent() +" "+ modele[i].getContent(), 0, "images/"+images[i].getContent(), Integer.parseInt(frequence_rep_min[i].getContent()), 
+        hpInStock.add(new RoundedSquareDHp ((int)(50.0*heightCoeff), (int)(100.0*widthCoeff), 10, width/2+20 +k*(int)(110*widthCoeff), 60+j*(int)(60*heightCoeff), #375D81, marque[i].getContent() +" "+ modele[i].getContent()+" "+numero[i].getContent(), marque[i].getContent() +" "+ modele[i].getContent()+" "+numero[i+1].getContent(), 
+        new hp(20, 20, 0, marque[i].getContent() +" "+ modele[i].getContent(), 0, "images/"+images[i].getContent(), Integer.parseInt(frequence_rep_min[i].getContent()), 
         Integer.parseInt(frequence_rep_max[i].getContent()), Float.parseFloat(impedance_nominale[i].getContent()), Integer.parseInt( puissance_rms[i].getContent()), 
-        Integer.parseInt( puissance_crete[i].getContent()), Integer.parseInt(id[i].getString("id")), Integer.parseInt(parite[i].getContent()), Float.parseFloat(directivite[i].getContent())*3.1415/360, Integer.parseInt(numero[i].getContent())), 
-        new hp(200, 200, 0, 
+        Integer.parseInt( puissance_crete[i].getContent()), Integer.parseInt(id[i].getString("id")), Integer.parseInt(parite[i].getContent()), Float.parseFloat(directivite[i].getContent())*3.1415/360, Integer.parseInt(numero[i].getContent()),nickname[i].getContent()), 
+        new hp(20, 20, 0, 
         marque[i].getContent() +" "+ modele[i].getContent(), 
         0, "images/"+images[i].getContent(), Integer.parseInt(frequence_rep_min[i].getContent()), 
         Integer.parseInt(frequence_rep_max[i].getContent()), Float.parseFloat(impedance_nominale[i].getContent()), Integer.parseInt( puissance_rms[i].getContent()), 
-        Integer.parseInt( puissance_crete[i].getContent()), Integer.parseInt(id[i+1].getString("id")), Integer.parseInt(parite[i].getContent()), Float.parseFloat(directivite[i].getContent())*3.1415/360, Integer.parseInt(numero[i+1].getContent()))) );
+        Integer.parseInt( puissance_crete[i].getContent()), Integer.parseInt(id[i+1].getString("id")), Integer.parseInt(parite[i].getContent()), Float.parseFloat(directivite[i].getContent())*3.1415/360, Integer.parseInt(numero[i+1].getContent()),nickname[i+1].getContent()) ) );
         k++;
       }
     }
@@ -487,7 +493,7 @@ void exportToTex() {
     if ((i+1)%38==0) {
       data+="\n \\end{tabular} \\\\ \n \\begin{tabular}{|c|c|c|}\n \\hline \n Piste Audio & Curseur & Sortie MADI \\\\ \n\\hline \n ";
     }
-    hp hpTemp = (hp) hpOnStage.elementAt(i);
+    hp hpTemp = (hp) hpOnStage.get(i);
     data+=hpTemp.piste+" & "+hpTemp.curseur +" & "+hpTemp.sortie+" \\\\ \n \\hline \n" ;
   }
   data+="\n \\end{tabular}  \n";
@@ -498,7 +504,7 @@ void exportToTex() {
     if ((i+1)%38==0) {
       data+="\n \\end{tabular} \\\\ \n \\begin{tabular}{|c|c|c|}\n \\hline \n sortie MADI & Ampli & Haut-parleur \\\\ \n\\hline \n ";
     }
-    hp hpTemp = (hp) hpOnStage.elementAt(i);
+    hp hpTemp = (hp) hpOnStage.get(i);
     data+=hpTemp.sortie+" & TODO & "+hpTemp.type+" "+hpTemp.numero +" \\\\ \n \\hline \n" ;
   }
   data+="\n \\end{tabular}  \n";
@@ -525,7 +531,7 @@ void exportToXML() {
   data+="\t\t<adresse> 150, rue royale, 1000 Bruxelles </adresse> \n";
   data+="\t</salle>\n";
   for (int i=0;i<hpOnStage.size();i++) {
-    hp hpTemp = (hp) hpOnStage.elementAt(i);
+    hp hpTemp = (hp) hpOnStage.get(i);
     data+="\t<hp>\n";
     data+="\t\t<x>"+(float)(hpTemp.position[0])/displayWidth+"</x>\n";
     data+="\t\t<y>"+(float)(hpTemp.position[1])/displayHeight+"</y>\n";
@@ -564,7 +570,7 @@ void selectHp(hp rHp, boolean wantSym)
     hpSelected[0].isSelected=false;
     if (hpSelected[0].hasSymetric) {
       int k= getIdOfSymetric(hpSelected[0]);
-      hp hpTemp = (hp)hpOnStage.elementAt(k);
+      hp hpTemp = (hp)hpOnStage.get(k);
       hpTemp.isSelected=false;
     }
   }
@@ -573,7 +579,7 @@ void selectHp(hp rHp, boolean wantSym)
   hpSelected[0]=rHp;
   if (hpSelected[0].hasSymetric&&wantSym) {
     int k= getIdOfSymetric(hpSelected[0]);
-    hp hpTemp = (hp)hpOnStage.elementAt(k);
+    hp hpTemp = (hp)hpOnStage.get(k);
     hpTemp.isSelected=true;
   }
 
@@ -590,9 +596,9 @@ boolean checkOnHpButtons(int x, int y) {
   for (int i=0;i<hpInStock.size();i++) //check clics on buttons.
   {
 
-    if (hpInStock.elementAt(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
+    if (hpInStock.get(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
       RoundedSquare rTemp;
-      rTemp = (RoundedSquare) hpInStock.elementAt(i);
+      rTemp = (RoundedSquare) hpInStock.get(i);
       if (rTemp.contains(x, y)&& !rTemp.isDisable)
       {
         rTemp.hpLink.placement=lastIdHpOnStage;
@@ -617,7 +623,7 @@ boolean checkOnHpButtons(int x, int y) {
 
     else {
       RoundedSquareDHp rTemp;
-      rTemp = (RoundedSquareDHp) hpInStock.elementAt(i);
+      rTemp = (RoundedSquareDHp) hpInStock.get(i);
       if (rTemp.contains(x, y) && (!rTemp.isDisable1 || !rTemp.isDisable2 ))
       {
         if (!rTemp.isDisable1 && !rTemp.isDisable2) {
@@ -668,7 +674,7 @@ boolean checkHpOnStage(int x, int y, boolean wantSymetric, int pisteSelec) {
   boolean onSomething=false;
   for (int i=0;i<hpOnStage.size();i++) //check click on HP added.
   {
-    hp rHp = (hp) hpOnStage.elementAt(i);
+    hp rHp = (hp) hpOnStage.get(i);
     if (rHp.isOnHp(x, y))
     {
       if (fiveDotOne[pisteSelec].selected&&rHp.piste==null&&  onglet==2) {
@@ -709,7 +715,7 @@ boolean checkOptionButtons(int x, int y) {
         hpSelected[0].xRotation=1;
         if (hpSelected[0].hasSymetric) {
           int j=getIdOfSymetric(hpSelected[0]);
-          hp hTemp=(hp) hpOnStage.elementAt(j);
+          hp hTemp=(hp) hpOnStage.get(j);
           hTemp.xRotation=1;
         }
         break;
@@ -717,7 +723,7 @@ boolean checkOptionButtons(int x, int y) {
         hpSelected[0].xRotation=2;
         if (hpSelected[0].hasSymetric) {
           int j=getIdOfSymetric(hpSelected[0]);
-          hp hTemp=(hp) hpOnStage.elementAt(j);
+          hp hTemp=(hp) hpOnStage.get(j);
           hTemp.xRotation=2;
         }
 
@@ -729,18 +735,18 @@ boolean checkOptionButtons(int x, int y) {
         }
         else {
           int j=getIdOfSymetric(hpSelected[0]);
-          hp hTemp=(hp) hpOnStage.elementAt(j);
+          hp hTemp=(hp) hpOnStage.get(j);
           hTemp.hasSymetric=false;
           hTemp.isSelected=false;
           hpSelected[0].hasSymetric=false;//soliste
-          //hpOnStage.removeElementAt(j);
+          //hpOnStage.remove(j);
         }
         break;
       case 3:
         hpSelected[0].position[2]=2;
         if (hpSelected[0].hasSymetric) {
           int j=getIdOfSymetric(hpSelected[0]);
-          hp hTemp=(hp) hpOnStage.elementAt(j);
+          hp hTemp=(hp) hpOnStage.get(j);
           hTemp.position[2]=2;
         }
         break;
@@ -748,7 +754,7 @@ boolean checkOptionButtons(int x, int y) {
         hpSelected[0].position[2]=1;
         if (hpSelected[0].hasSymetric) {
           int j=getIdOfSymetric(hpSelected[0]);
-          hp hTemp=(hp) hpOnStage.elementAt(j);
+          hp hTemp=(hp) hpOnStage.get(j);
           hTemp.position[2]=1;
         }
         break;
@@ -756,7 +762,7 @@ boolean checkOptionButtons(int x, int y) {
         hpSelected[0].position[2]=0;
         if (hpSelected[0].hasSymetric) {
           int j=getIdOfSymetric(hpSelected[0]);
-          hp hTemp=(hp) hpOnStage.elementAt(j);
+          hp hTemp=(hp) hpOnStage.get(j);
           hTemp.position[2]=0;
         }
         break;
@@ -764,7 +770,7 @@ boolean checkOptionButtons(int x, int y) {
         hpSelected[0].xRotation=0;
         if (hpSelected[0].hasSymetric) {
           int j=getIdOfSymetric(hpSelected[0]);
-          hp hTemp=(hp) hpOnStage.elementAt(j);
+          hp hTemp=(hp) hpOnStage.get(j);
           hTemp.xRotation=0;
         }
         break;
@@ -784,7 +790,7 @@ void looseFocus() {
   hpSelected[0].isSelected=false;
   if (hpSelected[0].hasSymetric) {
     int k= getIdOfSymetric(hpSelected[0]);
-    hp hpTemp = (hp)hpOnStage.elementAt(k);
+    hp hpTemp = (hp)hpOnStage.get(k);
     hpTemp.isSelected=false;
   }
   hpSelected[0]=null;
@@ -875,12 +881,12 @@ void checkCurseurs(int x, int y) {
 }
 
 void checkButtonsTab3(int x, int y) {
-  if(buttonTab3.contains((float) x, (float) y)){
+  if (buttonTab3.contains((float) x, (float) y)) {
     deleteLinkFaderHP();
   }
 }
 
-void deleteLinkFaderHP(){
+void deleteLinkFaderHP() {
   hpSelected[0].curseur=0;
 }
 
@@ -962,7 +968,7 @@ void addSelectedInTheListCurseur(int curseur) {
   clearSelectedHpsCur();
 
   for (int i=0; i<hpOnStage.size()&& Faders[curseur].selected;i++) {
-    hp temp=(hp)hpOnStage.elementAt(i);
+    hp temp=(hp)hpOnStage.get(i);
     if (temp.curseur==curseur+1) {
       temp.OnFocus=true;
       listeHpSelCur.add(temp);
@@ -983,7 +989,7 @@ void addSelectedInTheList(int piste) {
 
   clearSelectedHps();
   for (int i=0; i<hpOnStage.size()&& fiveDotOne[piste].selected;i++) {
-    hp temp=(hp)hpOnStage.elementAt(i);
+    hp temp=(hp)hpOnStage.get(i);
     if (temp.piste!=null&&temp.piste.equals(Integer.toString(piste+1))) {
       temp.OnFocus=true;
       listeHpSel.add(temp);
@@ -1034,8 +1040,8 @@ void removeHp(hp hpSel) {
   int l= getPositionOfHpInStock(hpSel.idHp);
 
   //println ("LAEZL"+ l);
-  if (hpInStock.elementAt(l).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
-    RoundedSquare rTemp = (RoundedSquare) hpInStock.elementAt(l);
+  if (hpInStock.get(l).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
+    RoundedSquare rTemp = (RoundedSquare) hpInStock.get(l);
     //rTemp.numberDispo++;
     rTemp.isDisable=false;
 
@@ -1043,20 +1049,20 @@ void removeHp(hp hpSel) {
 
       rTemp.numberDispo++;
       int j = getIdOfSymetric(hpSel);
-      hp hpTemp = (hp)hpOnStage.elementAt(j);
+      hp hpTemp = (hp)hpOnStage.get(j);
       int m= getPositionOfHpInStock(hpTemp.idHp); //ici ca pu encore amélio
-      RoundedSquare rTempHp = (RoundedSquare) hpInStock.elementAt(m);
+      RoundedSquare rTempHp = (RoundedSquare) hpInStock.get(m);
       // rTempHp.numberDispo++;
       rTempHp.isDisable=false;
 
-      hpOnStage.removeElementAt(j);
+      hpOnStage.remove(j);
     }
 
     int k = findHpWithName(hpSel.type, hpSel.numero);
-    hpOnStage.removeElementAt(k);
+    hpOnStage.remove(k);
   }
   else {
-    RoundedSquareDHp rTemp = (RoundedSquareDHp) hpInStock.elementAt(l);
+    RoundedSquareDHp rTemp = (RoundedSquareDHp) hpInStock.get(l);
     if (rTemp.hpLink1.numero==hpSel.numero) {
       rTemp.isDisable1=false;
 
@@ -1064,7 +1070,7 @@ void removeHp(hp hpSel) {
       if (hpSel.hasSymetric) {
         int j = getIdOfSymetric(hpSel);
         rTemp.isDisable2=false;
-        hpOnStage.removeElementAt(j);
+        hpOnStage.remove(j);
       }
     }
     if (rTemp.hpLink2.numero==hpSel.numero) {
@@ -1074,12 +1080,12 @@ void removeHp(hp hpSel) {
       if (hpSel.hasSymetric) {
         int j = getIdOfSymetric(hpSel);
         rTemp.isDisable1=false;
-        hpOnStage.removeElementAt(j);
+        hpOnStage.remove(j);
       }
     }
 
     int k = findHpWithPlacement(hpSel.placement);
-    hpOnStage.removeElementAt(k);
+    hpOnStage.remove(k);
   }
 }
 
@@ -1089,7 +1095,7 @@ void addSymetric(hp hpDepart)
   // println("idHp "+idHp);
   if (idHp!=-1) {            //Est déjà présent sur la scène.
     hpDepart.hasSymetric=true;
-    hp hpTemp=(hp) hpOnStage.elementAt(idHp);
+    hp hpTemp=(hp) hpOnStage.get(idHp);
     hpTemp.hasSymetric=true;
     hpTemp.isSelected=true;
     hpTemp.position[2]=hpDepart.position[2];
@@ -1097,6 +1103,7 @@ void addSymetric(hp hpDepart)
     hpTemp.position[0]=width/2-hpDepart.position[0];
     hpTemp.position[1]=hpDepart.position[1];
     hpTemp.rotation=3.1415-hpDepart.rotation;
+    hpTemp.calculateDraw();
   }
   else {
     hp rHp;
@@ -1105,14 +1112,14 @@ void addSymetric(hp hpDepart)
       int l= getPositionOfHpInStock(hpDepart.type, (hpDepart.numero+1));
       //println ("positionReceive" +l);
       if (l==-1) return;
-      if (hpInStock.elementAt(l).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
-        RoundedSquare rTemp = (RoundedSquare) hpInStock.elementAt(l);
+      if (hpInStock.get(l).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
+        RoundedSquare rTemp = (RoundedSquare) hpInStock.get(l);
         rTemp.numberDispo=0;
         idFinal=rTemp.hpLink.idHp;
         rTemp.isDisable=true;
       }
       else {
-        RoundedSquareDHp rTemp = (RoundedSquareDHp) hpInStock.elementAt(l);
+        RoundedSquareDHp rTemp = (RoundedSquareDHp) hpInStock.get(l);
         if (!rTemp.isDisable1) {
           rTemp.isDisable1=true;
           // println("rTemp.hpLink1.idHp "+ rTemp.hpLink1.idHp);
@@ -1135,13 +1142,13 @@ void addSymetric(hp hpDepart)
       int l= getPositionOfHpInStock(hpDepart.type, hpDepart.numero-1);
       if (l==-1) return;
       // println(l);
-      if (hpInStock.elementAt(l).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
-        RoundedSquare rTemp = (RoundedSquare) hpInStock.elementAt(l);
+      if (hpInStock.get(l).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
+        RoundedSquare rTemp = (RoundedSquare) hpInStock.get(l);
         idFinal=rTemp.hpLink.idHp;
         rTemp.isDisable=true;
       }
       else {
-        RoundedSquareDHp rTemp = (RoundedSquareDHp) hpInStock.elementAt(l);
+        RoundedSquareDHp rTemp = (RoundedSquareDHp) hpInStock.get(l);
         if (!rTemp.isDisable1) {
           rTemp.isDisable1=true;
           //println("rTemp.hpLink1.idHp "+ rTemp.hpLink1.idHp);
@@ -1164,19 +1171,20 @@ void addSymetric(hp hpDepart)
     rHp.hasSymetric=true;
     rHp.isSelected=true;
     hpOnStage.add(rHp);
+    rHp.calculateDraw();
   }
 }
 
 int getPositionOfHpInStock(int id) {
   for (int i=0;i<hpInStock.size();i++) {
-    if (hpInStock.elementAt(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
-      RoundedSquare temp=(RoundedSquare) hpInStock.elementAt(i);
+    if (hpInStock.get(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
+      RoundedSquare temp=(RoundedSquare) hpInStock.get(i);
       //   println("temp.hpLink.idHp "+temp.hpLink.idHp+" id "+id);
       if (temp.hpLink.idHp==id)
         return i;
     }
     else {
-      RoundedSquareDHp temp=(RoundedSquareDHp) hpInStock.elementAt(i);
+      RoundedSquareDHp temp=(RoundedSquareDHp) hpInStock.get(i);
       if (temp.hpLink1.idHp==id || temp.hpLink2.idHp==id)
         return i;
     }
@@ -1187,14 +1195,14 @@ int getPositionOfHpInStock(int id) {
 int getPositionOfHpInStock(String name, int numero) {
 
   for (int i=0;i<hpInStock.size();i++) {
-    if (hpInStock.elementAt(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
-      RoundedSquare temp=(RoundedSquare) hpInStock.elementAt(i);
+    if (hpInStock.get(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
+      RoundedSquare temp=(RoundedSquare) hpInStock.get(i);
       if (temp.hpLink.numero==numero && temp.hpLink.type.equals(name)) {
         return i;
       }
     }
     else {
-      RoundedSquareDHp temp=(RoundedSquareDHp) hpInStock.elementAt(i);
+      RoundedSquareDHp temp=(RoundedSquareDHp) hpInStock.get(i);
       if ((temp.hpLink1.numero==numero && temp.hpLink1.type.equals(name))||(temp.hpLink2.numero==numero && temp.hpLink2.type.equals(name)) )
         return i;
     }
@@ -1206,14 +1214,14 @@ int getPositionOfHpInStock(String name, int numero) {
 int getIdOfHpInStock(String name, int numero) {
   int k=-1;
   for (int i=0;i<hpInStock.size();i++) {
-    if (hpInStock.elementAt(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
-      RoundedSquare temp=(RoundedSquare) hpInStock.elementAt(i);
+    if (hpInStock.get(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
+      RoundedSquare temp=(RoundedSquare) hpInStock.get(i);
       if (temp.hpLink.numero==numero && temp.hpLink.type.equals(name)) {
         return temp.hpLink.idHp;
       }
     }
     else {
-      RoundedSquareDHp temp=(RoundedSquareDHp) hpInStock.elementAt(i);
+      RoundedSquareDHp temp=(RoundedSquareDHp) hpInStock.get(i);
       if (temp.hpLink1.numero==numero && temp.hpLink1.type.equals(name)) {
         return temp.hpLink1.idHp;
       }
@@ -1243,11 +1251,13 @@ void setPositionSelectedHp(int x, int y) {
   if (moveAllRight && hpSelected[0]!=null && !rotationSlider.isOnSlider(x, y)&&!isOnSlider&& x<width/2) {
     hpSelected[0].position[0]=x;
     hpSelected[0].position[1]=y;
+    hpSelected[0].calculateDraw();
     if (hpSelected[0].hasSymetric) {
       int k=getIdOfSymetric(hpSelected[0]);
-      hp hpTemp=(hp)hpOnStage.elementAt(k);
+      hp hpTemp=(hp)hpOnStage.get(k);
       hpTemp.position[0]=width/2-hpSelected[0].position[0];
       hpTemp.position[1]=hpSelected[0].position[1];
+      hpTemp.calculateDraw();
     }
   }
 }
@@ -1256,12 +1266,13 @@ void setPositionSelectedHp(int x, int y) {
 void setSliderRotation(int x, int y) {
   if (hpSelected[0]!=null && rotationSlider.isOnSlider(x, y)) {
     rotationSlider.currentPos=x-(x%(int)(rotationSlider.sWidth/24f));
-    hpSelected[0].rotation=((2*3.1415)/rotationSlider.sWidth * (x-rotationSlider.posX))-((2*3.1415)/rotationSlider.sWidth * (x-rotationSlider.posX)%(3.1415/12));
+    hpSelected[0].setRotation(((2*3.1415)/rotationSlider.sWidth * (x-rotationSlider.posX))-((2*3.1415)/rotationSlider.sWidth * (x-rotationSlider.posX)%(3.1415/12)));
+
     isOnSlider=true;
     if (hpSelected[0].hasSymetric) {
       int k=getIdOfSymetric(hpSelected[0]);
-      hp hpTemp=(hp)hpOnStage.elementAt(k);
-      hpTemp.rotation=3.1415 - hpSelected[0].rotation;
+      hp hpTemp=(hp)hpOnStage.get(k);
+      hpTemp.setRotation(3.1415 - hpSelected[0].rotation);
     }
   }
 }
@@ -1279,7 +1290,7 @@ void mouseReleased() {
 }
 int findHpWithName(String name, int numero) {
   for (int i=0;i<hpOnStage.size();i++) {
-    hp temp=(hp) hpOnStage.elementAt(i);
+    hp temp=(hp) hpOnStage.get(i);
     // println (i+" "+temp.numero+" "+temp.type+ " "+ numero+" "+name);
     if (temp.type.equals(name) && temp.numero==numero) {
       return i;
@@ -1292,7 +1303,7 @@ int findHpWithName(String name, int numero) {
 int findHpWithPlacement(int Placement)
 {
   for (int i=0;i<hpOnStage.size();i++) {
-    hp temp=(hp) hpOnStage.elementAt(i);
+    hp temp=(hp) hpOnStage.get(i);
     if (temp.placement==Placement)
       return i;
   }
@@ -1302,13 +1313,13 @@ int findHpWithPlacement(int Placement)
 hp findHpWithId(int id)
 {
   for (int i=0;i<hpInStock.size();i++) {
-    if (hpInStock.elementAt(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
-      RoundedSquare temp=(RoundedSquare) hpInStock.elementAt(i);
+    if (hpInStock.get(i).getClass().getName()=="MIAMConfig0_2$RoundedSquare") {
+      RoundedSquare temp=(RoundedSquare) hpInStock.get(i);
       if (temp.hpLink.idHp==id)
         return temp.hpLink;
     }
     else {
-      RoundedSquareDHp rTemp = (RoundedSquareDHp) hpInStock.elementAt(i);
+      RoundedSquareDHp rTemp = (RoundedSquareDHp) hpInStock.get(i);
       if (rTemp.hpLink1.idHp==id) {
         return rTemp.hpLink1;
       }
@@ -1342,7 +1353,7 @@ void OSCSend(String note, int id, boolean selected) {
 
 RoundedSquare findRoundedSquareFromIdHp(int id) {
   for (int i=0;i<hpInStock.size();i++) {
-    RoundedSquare temp=(RoundedSquare) hpInStock.elementAt(i);
+    RoundedSquare temp=(RoundedSquare) hpInStock.get(i);
     if (temp.hpLink.idHp==id)
       return temp;
   }
@@ -1356,7 +1367,7 @@ void addTuioCursor(TuioCursor tcur) {
 
 
   if ( tcur.getCursorID()==0 ) {
-     KeyEvent event = new KeyEvent(this, KeyEvent.KEY_PRESSED, 1, 0, KeyEvent.VK_S);
+    //KeyEvent event = new KeyEvent(this, KeyEvent.KEY_PRESSED, 1, 0, KeyEvent.VK_S);
     onSomething = checkButtonGeneral(xPos, yPos);
     if (onglet==1&&!onSomething) {
       onSomething=  checkOnHpButtons(xPos, yPos);
@@ -1419,7 +1430,7 @@ void updateTuioCursor (TuioCursor tcur) {
     hpSelected[0].setRotation(rotCurrent-rotCurrent%(3.1415/12));
     if (hpSelected[0].hasSymetric) {
       int k=getIdOfSymetric(hpSelected[0]);
-      hp hpTemp=(hp)hpOnStage.elementAt(k);
+      hp hpTemp=(hp)hpOnStage.get(k);
       hpTemp.rotation=3.1415 - hpSelected[0].rotation;
     }
   }

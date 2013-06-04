@@ -105,20 +105,22 @@ class RoundedSquareDHp {
     }
 
 
-    text(name1, x, y-2, (int)(100*widthCoeff), (int)(30*heightCoeff));
+    if (hpLink1 == null){
+        text(name1, x, y-2, (int)(100*widthCoeff), (int)(30*heightCoeff));
+    }
+    else{
+       text(hpLink1.nickname + hpLink1.numero, x, y-2, (int)(100*widthCoeff), (int)(30*heightCoeff));
+    }
     if (isDisable2) {
       fill(#3e4b57);
     }
     else fill(#E1E6FA, 255);
-
-    text(name2, x, y+width/2-2, (int)(100*widthCoeff), (int)(30*heightCoeff));
-    pushMatrix();
-
-    /*  image(img, x+diameter/2, y+diameter/2);
-     tint(255,alphaFill);*/
-
-    popMatrix();
-   
+     if (hpLink2 == null){
+       text(name2, x, y+width/2-2, (int)(100*widthCoeff), (int)(30*heightCoeff));
+    }
+    else{
+       text(hpLink2.nickname + hpLink2.numero, x, y+width/2-2, (int)(100*widthCoeff), (int)(30*heightCoeff));
+    }
   }
 }
 

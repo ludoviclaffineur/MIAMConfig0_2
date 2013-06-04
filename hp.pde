@@ -17,10 +17,11 @@ class hp {
   float pi=3.1415927;
   float angleCorners=pi/3;
   float opening=pi/6;
-  float rotation=0;
+  float rotation=pi/2.0;
   int numero;
   int placement;
   int frequence_rep_min;
+  String nickname;
   int frequence_rep_max; 
   float impedance_nominale; 
   int puissance_rms;
@@ -31,13 +32,16 @@ class hp {
   boolean OnFocus=false;
 
   boolean useToBeTwo;
-
+  PFont font_hp;
   int xRotation = 0; // 0= frontal 1=douche 2=fontaine;
   hp() {
+    font_hp = createFont("Arial",32);
   }
 
 
   hp(hp hpCopy) {
+    this();
+    this.nickname = hpCopy.nickname;
     this.position[0]=hpCopy.position[0];
     this.position[1]=hpCopy.position[1];
     this.position[2]=hpCopy.position[2];
@@ -58,10 +62,12 @@ class hp {
     this.numero=hpCopy.numero;
   }
 
-  hp(int x, int y, int z, String type, int placement, String linkPicture, int frequence_rep_min, int frequence_rep_max, float impedance_nominale, int puissance_rms, int puissance_crete, int idHp, int useToBeTwo, float opening, int numero) {
+  hp(int x, int y, int z, String type, int placement, String linkPicture, int frequence_rep_min, int frequence_rep_max, float impedance_nominale, int puissance_rms, int puissance_crete, int idHp, int useToBeTwo, float opening, int numero, String nickname) {
+    this();
     position[0]=x;
     position[1]=y;
     position[2]=z;
+    this.nickname = nickname;
     this.type=type;
     this.idHp=idHp;
     this.placement=placement;
@@ -87,28 +93,28 @@ class hp {
 
   void calculateDraw() {
     //coord rect
-    coordCorners[0][0]=(int)(position[0]+20*cos(rotation+angleCorners));
-    coordCorners[1][0]=(int)(position[0]+20*cos(rotation+pi-angleCorners));
-    coordCorners[2][0]=(int)(position[0]+20*cos(rotation+pi+angleCorners));
-    coordCorners[3][0]=(int)(position[0]+20*cos(rotation-angleCorners));
-    coordCorners[0][1]=(int)(position[1]+20*sin(rotation+angleCorners));
-    coordCorners[1][1]=(int)(position[1]+20*sin(rotation+pi-angleCorners));
-    coordCorners[2][1]=(int)(position[1]+20*sin(rotation+pi+angleCorners));
-    coordCorners[3][1]=(int)(position[1]+20*sin(rotation-angleCorners));
+    coordCorners[0][0]=(int)(position[0]+20*widthCoeff*cos(rotation+angleCorners));
+    coordCorners[1][0]=(int)(position[0]+20*widthCoeff*cos(rotation+pi-angleCorners));
+    coordCorners[2][0]=(int)(position[0]+20*widthCoeff*cos(rotation+pi+angleCorners));
+    coordCorners[3][0]=(int)(position[0]+20*widthCoeff*cos(rotation-angleCorners));
+    coordCorners[0][1]=(int)(position[1]+20*widthCoeff*sin(rotation+angleCorners));
+    coordCorners[1][1]=(int)(position[1]+20*widthCoeff*sin(rotation+pi-angleCorners));
+    coordCorners[2][1]=(int)(position[1]+20*widthCoeff*sin(rotation+pi+angleCorners));
+    coordCorners[3][1]=(int)(position[1]+20*widthCoeff*sin(rotation-angleCorners));
     //Coord arrows up
-    coordCorners[4][0]=(int)(position[0]+25*cos(rotation-opening));
-    coordCorners[5][0]=(int)(position[0]+22*cos(rotation-0.1-opening));
-    coordCorners[6][0]=(int)(position[0]+22*cos(rotation+0.1-opening));
-    coordCorners[4][1]=(int)(position[1]+25*sin(rotation-opening));
-    coordCorners[5][1]=(int)(position[1]+22*sin(rotation-0.1-opening));
-    coordCorners[6][1]=(int)(position[1]+22*sin(rotation+0.1-opening));
+    coordCorners[4][0]=(int)(position[0]+25*widthCoeff*cos(rotation-opening));
+    coordCorners[5][0]=(int)(position[0]+22*widthCoeff*cos(rotation-0.1-opening));
+    coordCorners[6][0]=(int)(position[0]+22*widthCoeff*cos(rotation+0.1-opening));
+    coordCorners[4][1]=(int)(position[1]+25*widthCoeff*sin(rotation-opening));
+    coordCorners[5][1]=(int)(position[1]+22*widthCoeff*sin(rotation-0.1-opening));
+    coordCorners[6][1]=(int)(position[1]+22*widthCoeff*sin(rotation+0.1-opening));
     //coord arrow down
-    coordCorners[7][0]=(int)(position[0]+25*cos(rotation+opening));
-    coordCorners[8][0]=(int)(position[0]+22*cos(rotation-0.1+opening));
-    coordCorners[9][0]=(int)(position[0]+22*cos(rotation+0.1+opening));
-    coordCorners[7][1]=(int)(position[1]+25*sin(rotation+opening));
-    coordCorners[8][1]=(int)(position[1]+22*sin(rotation-0.1+opening));
-    coordCorners[9][1]=(int)(position[1]+22*sin(rotation+0.1+opening));
+    coordCorners[7][0]=(int)(position[0]+25*widthCoeff*cos(rotation+opening));
+    coordCorners[8][0]=(int)(position[0]+22*widthCoeff*cos(rotation-0.1+opening));
+    coordCorners[9][0]=(int)(position[0]+22*widthCoeff*cos(rotation+0.1+opening));
+    coordCorners[7][1]=(int)(position[1]+25*widthCoeff*sin(rotation+opening));
+    coordCorners[8][1]=(int)(position[1]+22*widthCoeff*sin(rotation-0.1+opening));
+    coordCorners[9][1]=(int)(position[1]+22*widthCoeff*sin(rotation+0.1+opening));
   }
   void setRotation(float angle)
   {
@@ -123,13 +129,14 @@ class hp {
 
   void draw() {
 
-    calculateDraw();
-    
-   //Couleur noire
+//    calculateDraw();
+
+    //Couleur noire
+    textFont(font_hp, 12*widthCoeff);
     strokeWeight(10);
     stroke(#ffffff);
- 
     
+
     for (int i =0;i<3;i++) {
       line(coordCorners[i][0], coordCorners[i][1], coordCorners[i+1][0], coordCorners[i+1][1]);
     }
@@ -153,48 +160,46 @@ class hp {
 
       line(coordCorners[1][0], coordCorners[1][1], coordCorners[3][0], coordCorners[3][1]);
     }
-    if (xRotation==2) { 
+    else if (xRotation==2) { 
       fill(#E1E6FA);
       ellipse(position[0], position[1], 4, 4);
     }
-   if(piste!=null){
-        fill(#ffffff);
-       ellipse(position[0]+20, position[1]-20, 15, 15);
-         
+    if (piste!=null) {
+      fill(#ffffff);
+      ellipse(position[0]+20, position[1]-20, 15, 15);
     }
-    if (sortie!=0){
+    if (sortie!=0) {
       fill(#ffffff);
       ellipse(position[0]+20, position[1]+20, 15, 15);
-      
     }
-     if (curseur!=0){
-       fill(#ffffff);
-       ellipse(position[0]-20, position[1]-20, 15, 15);
-       
+    if (curseur!=0) {
+      fill(#ffffff);
+      ellipse(position[0]-20, position[1]-20, 15, 15);
     } 
-  
-   if(OnFocus){
-     noStroke();
-     fill(#ABC8E2);
-     ellipse(position[0], position[1], 70, 70);
-   }
-       noStroke();
-    fill(#000000);
-    
-    if(piste!=null){
 
-         fill(#000000);
-      text(piste, position[0]+20, position[1]-20);
+    if (OnFocus) {
+      noStroke();
+      fill(#ABC8E2);
+      ellipse(position[0], position[1], 70, 70);
     }
-    if (sortie!=0){
+    noStroke();
+    fill(#000000);
+
+    if (piste!=null) {
 
       fill(#000000);
-      text(sortie, position[0]+20, position[1]+20);
+      text(piste, position[0]-15, position[1]-16);
+      
     }
-     if (curseur!=0){
-       
-       fill(#000000);
-      text(curseur, position[0]-20, position[1]-20);
+    if (sortie!=0) {
+
+      fill(#000000);
+      text(sortie, position[0]+15, position[1]-16);
+    }
+    if (curseur!=0) {
+
+      fill(#000000);
+      text(curseur, position[0], position[1]-32);
     }
     //Couleur Au dessus
     stroke(#E1E6FA);
@@ -202,17 +207,13 @@ class hp {
       noFill();
       strokeWeight(5);
       stroke(#ABC8E2);
-      
+
       ellipse(position[0], position[1], 100, 100);
       stroke(#E1E6FA);
-      
-
-      
-      
     }
     fill(#000000);
-      strokeWeight(1);
-    text(type+" "+numero, position[0], position[1]-32);
+    strokeWeight(1);
+    //text(type+" "+numero, position[0], position[1]-32);
     strokeWeight(2);
     if (position[2]==1)
     {
@@ -226,7 +227,7 @@ class hp {
     {
       stroke(#a51c1c);
     }
-    
+
     for (int i =0;i<3;i++) {
       line(coordCorners[i][0], coordCorners[i][1], coordCorners[i+1][0], coordCorners[i+1][1]);
     }
@@ -252,19 +253,20 @@ class hp {
     }
     fill(#000000);
     if (xRotation==2) { 
-      
+
       fill(#E1E6FA);
       ellipse(position[0], position[1], 4, 4);
     }
-   
-     fill(#000000);
-      strokeWeight(1);
-    text(type+" "+numero, position[0], position[1]-32);
-   /* if(!OnFocus && piste!=null){
+
+    fill(#000000);
+    strokeWeight(1);
+    
+    text(nickname+numero, position[0], position[1]-25);
+    /* if(!OnFocus && piste!=null){
      noStroke();
      fill(#ffffff,200);
      ellipse(position[0], position[1], 100, 100);
-   }*/
+     }*/
 
     //setRotation(rotation+0.05);
 
@@ -282,6 +284,7 @@ class hp {
      //line(position[0]+(xLength)*cos(rotation)-(yLength/2)*sin(rotation), position[1]+(xLength*sin(rotation))+(yLength/2)*cos(rotation), position[0]+xLength-3+arrowLength, position[1]+yLength/2+(arrowLength));
      rotation = rotation+=0.05;
      //  triangle(position[0]+xLength-3+arrowLength*cos(rotation),position[1]+yLength/2+arrowLength*sin(rotation));*/
+     textFont(font, 16*widthCoeff);
   }
 }
 
