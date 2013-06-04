@@ -8,7 +8,7 @@ import javax.media.opengl.*;
 import processing.opengl.*;
 fader f;
 boolean rotationActivated=false, moveAllRight=false, ExportPDF=false;
-String linkPlanSalle="planIsib.png"; 
+//String linkPlanSalle="planIsib.png"; 
 String linkPlanSalle1="PlanSalleConfigBlanc.png";
 int pisteSelected=0;
 int curseurSelected=0;
@@ -527,7 +527,7 @@ void exportToXML() {
   data += "";
   data+="\t<salle>\n";
   data+="\t\t<nom>"+nomSalle+"</nom>\n"; 
-  data+="\t\t<plan_salle>"+linkPlanSalle+"</plan_salle>\n"; 
+  data+="\t\t<plan_salle>"+linkPlanSalle1+"</plan_salle>\n"; 
   data+="\t\t<adresse> 150, rue royale, 1000 Bruxelles </adresse> \n";
   data+="\t</salle>\n";
   for (int i=0;i<hpOnStage.size();i++) {
