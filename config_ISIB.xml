@@ -3,15 +3,15 @@
 <config>
 	<salle>
 		<nom>ISIB</nom>
-		<plan_salle>planIsib.png</plan_salle>
+		<plan_salle>PlanSalleConfigBlanc.png</plan_salle>
 		<adresse> 150, rue royale, 1000 Bruxelles </adresse> 
 	</salle>
 	<hp>
-		<x>0.0890625</x>
-		<y>0.30375</y>
+		<x>0.02109375</x>
+		<y>0.8854167</y>
 		<z>0</z>
-		<rotation>0</rotation>
-		<idHp>4</idHp>
+		<rotation>315</rotation>
+		<idHp>2</idHp>
 		<placement>1</placement>
 		<xRotation>0</xRotation>
 		<hasSymetric>true</hasSymetric>
@@ -20,16 +20,198 @@
 		<sortieMadi>0</sortieMadi>
 	</hp>
 	<hp>
-		<x>0.4109375</x>
-		<y>0.30375</y>
+		<x>0.459375</x>
+		<y>0.8854167</y>
 		<z>0</z>
-		<rotation>180</rotation>
-		<idHp>51</idHp>
+		<rotation>-135</rotation>
+		<idHp>3</idHp>
 		<placement>2</placement>
 		<xRotation>0</xRotation>
 		<hasSymetric>true</hasSymetric>
 		<curseur>0</curseur>
 		<pisteAudio>null</pisteAudio>
 		<sortieMadi>0</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.045703124</x>
+		<y>0.62083334</y>
+		<z>2</z>
+		<rotation>90</rotation>
+		<idHp>4</idHp>
+		<placement>3</placement>
+		<xRotation>1</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>3</pisteAudio>
+		<sortieMadi>0</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.43476564</x>
+		<y>0.62083334</y>
+		<z>2</z>
+		<rotation>90</rotation>
+		<idHp>51</idHp>
+		<placement>4</placement>
+		<xRotation>1</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>3</pisteAudio>
+		<sortieMadi>8</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.07734375</x>
+		<y>0.097222224</y>
+		<z>0</z>
+		<rotation>-120</rotation>
+		<idHp>5</idHp>
+		<placement>5</placement>
+		<xRotation>2</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>1</pisteAudio>
+		<sortieMadi>2</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.403125</x>
+		<y>0.097222224</y>
+		<z>0</z>
+		<rotation>300</rotation>
+		<idHp>6</idHp>
+		<placement>6</placement>
+		<xRotation>2</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>1</pisteAudio>
+		<sortieMadi>3</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.09101562</x>
+		<y>0.34930557</y>
+		<z>0</z>
+		<rotation>90</rotation>
+		<idHp>21</idHp>
+		<placement>7</placement>
+		<xRotation>0</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>2</pisteAudio>
+		<sortieMadi>5</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.3894531</x>
+		<y>0.34930557</y>
+		<z>0</z>
+		<rotation>90</rotation>
+		<idHp>52</idHp>
+		<placement>8</placement>
+		<xRotation>0</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>2</pisteAudio>
+		<sortieMadi>6</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.04609375</x>
+		<y>0.7881944</y>
+		<z>0</z>
+		<rotation>90</rotation>
+		<idHp>19</idHp>
+		<placement>9</placement>
+		<xRotation>0</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>3</pisteAudio>
+		<sortieMadi>1</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.434375</x>
+		<y>0.7881944</y>
+		<z>0</z>
+		<rotation>90</rotation>
+		<idHp>20</idHp>
+		<placement>10</placement>
+		<xRotation>0</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>null</pisteAudio>
+		<sortieMadi>0</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.09492187</x>
+		<y>0.5375</y>
+		<z>0</z>
+		<rotation>90</rotation>
+		<idHp>29</idHp>
+		<placement>11</placement>
+		<xRotation>0</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>3</pisteAudio>
+		<sortieMadi>0</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.38554686</x>
+		<y>0.5375</y>
+		<z>0</z>
+		<rotation>90</rotation>
+		<idHp>57</idHp>
+		<placement>12</placement>
+		<xRotation>0</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>2</pisteAudio>
+		<sortieMadi>7</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.22617188</x>
+		<y>0.23680556</y>
+		<z>0</z>
+		<rotation>90</rotation>
+		<idHp>28</idHp>
+		<placement>13</placement>
+		<xRotation>0</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>2</pisteAudio>
+		<sortieMadi>4</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.25429687</x>
+		<y>0.23680556</y>
+		<z>0</z>
+		<rotation>90</rotation>
+		<idHp>56</idHp>
+		<placement>14</placement>
+		<xRotation>0</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>1</pisteAudio>
+		<sortieMadi>10</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.13710937</x>
+		<y>0.44375</y>
+		<z>0</z>
+		<rotation>90</rotation>
+		<idHp>17</idHp>
+		<placement>15</placement>
+		<xRotation>0</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>3</pisteAudio>
+		<sortieMadi>0</sortieMadi>
+	</hp>
+	<hp>
+		<x>0.34335938</x>
+		<y>0.44375</y>
+		<z>0</z>
+		<rotation>90</rotation>
+		<idHp>18</idHp>
+		<placement>16</placement>
+		<xRotation>0</xRotation>
+		<hasSymetric>true</hasSymetric>
+		<curseur>0</curseur>
+		<pisteAudio>2</pisteAudio>
+		<sortieMadi>9</sortieMadi>
 	</hp>
 </config>
